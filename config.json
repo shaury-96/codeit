@@ -1,0 +1,10 @@
+{
+  "params": {
+    "head_line": "CodeIT - Solution to every problem",
+    "blog_name": "CodeIT",
+    "local_uri": "mysql://root:@localhost/codeit",
+    "no_of_posts": 3,
+    "admin_user": "sds",
+    "admin_password": "123"
+  }
+}
