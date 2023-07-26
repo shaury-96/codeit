@@ -1,0 +1,32 @@
+.navbar{
+    background-color:rgb(0,0,0);
+    margin-bottom:50px;
+
+}
+.navbar-brand{
+    color:white;
+}
+.navbar-brand:hover{
+color: #6c91d5;
+}
+navbar-toggler-icon:hover{
+
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  color: white; /* Change to your desired text color */
+}
+.card{
+    margin-bottom: 10px; /* Center the card horizontally (optional) */
+    width:70rem;
+    color:white;
+    background-color:rgb(0,0,0);
+
+}
+.card-title{
+    color:#6c91d5;
+}
+.time{
+    font-size:12px;
+    color:#D2D7F99E;
+}
