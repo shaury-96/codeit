@@ -1,8 +1,9 @@
-from flask import Flask,render_template,flash,redirect,url_for
-from forms import RegistrationForm, LoginForm
-app=Flask(__name__)
+from flask import render_template, url_for, flash, redirect
+from codeit import app
+from codeit.forms import RegistrationForm, LoginForm
+from codeit.models import User, Post
 
-app.config['SECRET_KEY'] = '60ba11abf2de9ed6d6495f367b3d65d2'
+
 posts = [
     {
         'author': 'Corey Schafer',
@@ -13,38 +14,39 @@ posts = [
     {
         'author': 'Jane Doe',
         'title': 'Blog Post 2',
-        'content': "Second post content",
+        'content': 'Second post content',
         'date_posted': 'April 21, 2018'
     }
 ]
 
+
 @app.route("/")
-@app.route("/Home")
+@app.route("/home")
 def home():
-    return render_template("home.html",posts=posts)
+    return render_template('home.html', posts=posts)
+
 
 @app.route("/about")
 def about():
-    return render_template("about.html",title="about")
+    return render_template('about.html', title='About')
 
-@app.route("/register", methods=['GET','POST'])
+
+@app.route("/register", methods=['GET', 'POST'])
 def register():
-    form=RegistrationForm()
+    form = RegistrationForm()
     if form.validate_on_submit():
-        flash(f"account created for {form.username.data}!","success")
+        flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('home'))
-    return render_template("register.html",title="register",form=form)
+    return render_template('register.html', title='Register', form=form)
 
-@app.route("/login",methods=['GET','POST'])
+
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-    form=LoginForm()
+    form = LoginForm()
     if form.validate_on_submit():
         if form.email.data == 'admin@blog.com' and form.password.data == 'password':
             flash('You have been logged in!', 'success')
             return redirect(url_for('home'))
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
-    return render_template("login.html",title="login",form=form)
-
-if __name__=='__main__':
-    app.run(debug=True)
+    return render_template('login.html', title='Login', form=form)
