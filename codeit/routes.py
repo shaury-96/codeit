@@ -1,4 +1,5 @@
 from flask import render_template, url_for, flash, redirect, request
+from werkzeug.urls import url_parse
 from codeit import app, db, bcrypt
 from codeit.forms import RegistrationForm, LoginForm
 from codeit.models import User, Post
@@ -56,7 +57,7 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
-            return redirect(next_page) if next_page else redirect(url_for('home'))
+            return redirect(url_for('home')) if not next_page or url_parse(next_page).netloc != '' else redirect(next_page)
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)
