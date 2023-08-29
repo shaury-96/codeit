@@ -1,10 +1,10 @@
 body {
-  background: #116466;
+  background: #181a1b;
   color: #333333;
   margin-top: 5rem;
 }
 .custom-navbar-color{
-    background-color: #D9B08C;
+    background-color: black;
 }
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
@@ -14,14 +14,16 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #5f788a;
 }
 #blog_name{
-color:#2C3531;
-}
-.site-header .navbar-nav .nav-link {
-  color:#2C3531;
+color:#FFFFFF;
+font-weight:500;
 }
 
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
+.site-header .navbar-nav .nav-link {
+  color:#FFFFFF;
+}
+
+#blog_name:hover,.site-header .navbar-nav .nav-link:hover {
+  color: #428bca;
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -29,29 +31,32 @@ color:#2C3531;
 }
 
 .content-section {
-  background: #D1E8E2;
+  background: #181a1b;
   padding: 10px 20px;
-  border: 1px solid #dddddd;
+  border:none;
   border-radius: 3px;
   margin-bottom: 20px;
 }
 
 .article-title {
-  color: #444444;
+  color: #6D94CB;
+  font-size:25px;
 }
 
 a.article-title:hover {
   color: #428bca;
+
   text-decoration: none;
 }
 
 .article-content {
   white-space: pre-line;
+  color:#e8e6e3;
 }
 
 .article-img {
-  height: 65px;
-  width: 65px;
+  height: 50px;
+  width: 50px;
   margin-right: 16px;
 }
 
@@ -81,15 +86,28 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+  color:#E8E6E3;
 }
 .btn-info{
-background-color:#116466;
 color:white;
+
+background-color:#181a1b;
 border:none;
 }
 .btn-info:hover,
 .select
 {
-color:black;
-background-color:#D1E8E2;
+background-color:#181a1b;
+color:#428bca;
+}
+.form-control-label,.form-control-file,
+label,
+legend{
+color:#E8E6E3;
+}
+.auth{
+color:#6C757D;
+}
+a.auth:hover{
+color:#428bca;
 }
