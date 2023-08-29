@@ -20,17 +20,23 @@
     <header class="site-header"><
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="background-color: #000000; ">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/"><span id="blog_name">CodeIT</span></a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#428bca" class="bi bi-code-slash" viewBox="0 0 16 16">
+          <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+        </svg>
+
+          <a class="navbar-brand mr-4" href="/"><span id="blog_name">CodeIT - Solution to every problem</span></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
-              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+<!--              <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>-->
+<!--              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>-->
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+                <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
                 {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
                 <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New post</a>
