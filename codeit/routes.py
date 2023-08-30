@@ -1,5 +1,6 @@
 import os
 import secrets
+import pytz
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from werkzeug.urls import url_parse
@@ -7,13 +8,13 @@ from codeit import app, db, bcrypt
 from codeit.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from codeit.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
-from datetime import datetime
+
 
 @app.route("/")
 @app.route("/home")
 def home():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=1)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
     return render_template('home.html', posts=posts)
 
 
