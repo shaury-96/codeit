@@ -11,7 +11,7 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/codeit'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 moment=Moment(app)
 db = SQLAlchemy(app)
 bcrypt=Bcrypt(app)
